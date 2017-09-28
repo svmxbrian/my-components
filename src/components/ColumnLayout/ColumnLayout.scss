@@ -1,0 +1,47 @@
+.column-layout {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  .top-border {
+    height: 27px;
+    background-color: #212636;
+  }
+
+  .header {
+    height: 60px;
+    background-color: #E2E8ED;
+  }
+
+  .line {
+    box-sizing: border-box;
+    height: 1px;
+    border: 1px solid #BEBEC6;
+  }
+
+  .content {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    .left {
+      flex: 2;
+      min-width: 320px;
+    }
+
+    .spacer {
+    	box-sizing: border-box;
+      height: 100%;
+    	width: 2px;
+    	border: 2px solid #B6C3CC;
+    }
+
+    .right {
+      flex: 7;
+      background-color: #D8D8D8;
+    }
+  }
+
+
+
+}

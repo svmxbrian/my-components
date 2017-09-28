@@ -1,0 +1,18 @@
+.region-sidebar {
+  display: flex;
+  flex-direction: row;
+  .sidebar--open {
+    width: 640px;
+  }
+
+  .sidebar--closed {
+    width: 320px;
+  }
+
+  .spacer {
+    box-sizing: border-box;
+    height: 100%;
+    width: 2px;
+    border: 2px solid #b6c3cc;
+  }
+}

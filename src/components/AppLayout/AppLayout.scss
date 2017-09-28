@@ -1,0 +1,22 @@
+.column-layout {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  .top-border {
+    height: 27px;
+    background-color: #212636;
+  }
+
+  .header {
+    height: 60px;
+    background-color: #e2e8ed;
+  }
+
+  .line {
+    box-sizing: border-box;
+    height: 1px;
+    border: 1px solid #bebec6;
+  }
+}
