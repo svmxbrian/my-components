@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './RegionSidebar.scss'
 
-class Sidebar extends React.PureComponent {
+class RegionSidebar extends React.PureComponent {
   state = {
     isOpen: this.props.isOpen || false
   }
@@ -20,9 +20,9 @@ class Sidebar extends React.PureComponent {
   }
 }
 
-Sidebar.propTypes = {
+RegionSidebar.propTypes = {
   isOpen: PropTypes.bool,
   children: PropTypes.node
 }
 
-export default Sidebar
+export default RegionSidebar

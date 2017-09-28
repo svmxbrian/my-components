@@ -13,7 +13,7 @@ export default class AppLayout extends React.PureComponent {
         <div className="line" />
         <Layout>
           <RegionSidebar isOpen={true}>
-            <input type="text" value="hello" />
+            <input type="text" defaultValue="hello" />
           </RegionSidebar>
           <RegionContent>This is some content</RegionContent>
         </Layout>
