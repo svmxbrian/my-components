@@ -92,7 +92,7 @@ describe('Layout', () => {
         </Layout>
       )
     } catch (e) {
-      var error = e
+      error = e
     }
     expect(error.message).toEqual(wrongChildren)
   })
@@ -115,5 +115,17 @@ describe('Layout', () => {
       error = e
     }
     expect(error.message).toEqual(wrongChildren)
+  })
+
+  it(`should render its children inside itself`, () => {
+    let sidebar = shallow(<RegionSidebar />)
+    let content = shallow(<RegionContent />)
+    layout = shallow(
+      <Layout>
+        <RegionSidebar />
+        <RegionContent />
+      </Layout>
+    )
+    expect(layout.html()).toContain(sidebar.html() + content.html())
   })
 })
