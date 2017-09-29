@@ -2,6 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './RegionSidebar.scss'
 
+const closedClass = 'sidebar--closed'
+const openClass = 'sidebar--open'
+
 class RegionSidebar extends React.PureComponent {
   state = {
     isOpen: this.props.isOpen || false
@@ -9,9 +12,7 @@ class RegionSidebar extends React.PureComponent {
   render() {
     return (
       <div className="region-sidebar">
-        <div
-          className={this.state.isOpen ? 'sidebar--open' : 'sidebar--closed'}
-          >
+        <div className={this.state.isOpen ? openClass : closedClass}>
           {this.props.children}
         </div>
         <div className="spacer" />
@@ -26,3 +27,4 @@ RegionSidebar.propTypes = {
 }
 
 export default RegionSidebar
+export { closedClass, openClass }
