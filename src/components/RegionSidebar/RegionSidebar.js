@@ -15,7 +15,15 @@ class RegionSidebar extends React.PureComponent {
         <div className={this.state.isOpen ? openClass : closedClass}>
           {this.props.children}
         </div>
-        <div className="spacer" />
+        <div
+          className={
+            this.state.isOpen ? 'spacer click-to-close' : 'spacer click-to-open'
+          }
+          onClick={() =>
+            this.setState({
+              isOpen: !this.state.isOpen
+            })}
+          />
       </div>
     )
   }

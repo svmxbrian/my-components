@@ -14,5 +14,13 @@
     height: 100%;
     width: 2px;
     border: 2px solid #b6c3cc;
+
+    &.click-to-open {
+      cursor: e-resize;
+    }
+
+    &.click-to-close {
+      cursor: w-resize;
+    }
   }
 }
