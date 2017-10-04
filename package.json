@@ -18,7 +18,7 @@
   "devDependencies": {
     "eslint": "^4.7.2",
     "prettier": "1.7.0",
-    "svmx-react-scripts": "1.1.24"
+    "@svmx/react-scripts": "1.1.32"
   },
   "scripts": {
     "start": "react-scripts start",
