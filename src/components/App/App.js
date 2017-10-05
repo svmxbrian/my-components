@@ -4,6 +4,8 @@ import { Switch, Route } from 'react-router'
 import { Link } from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom'
 
+import AppButtonInputList from 'components/AppButtonInputList'
+
 import AppLayout from 'components/AppLayout'
 import AppHello from 'components/AppHello'
 
@@ -17,6 +19,11 @@ const components = [
     name: 'Layout',
     component: AppLayout,
     path: '/layout'
+  },
+  {
+    name: 'Button Input List',
+    component: AppButtonInputList,
+    path: '/buttoninputlist'
   }
 ]
 
