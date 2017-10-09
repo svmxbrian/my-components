@@ -1,1 +1,16 @@
+.component-list-header {
+  font-size: 18px;
+}
 
+.route-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.notice {
+  text-align: center;
+}

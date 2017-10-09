@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Button = ({ text, onClick }) => (
-  <input class="button" type="button" onClick={onClick} value={text} />
+const Button = ({ text = 'Default Text', onClick }) => (
+  <input className="button" type="button" onClick={onClick} value={text} />
 )
 
 Button.propTypes = {

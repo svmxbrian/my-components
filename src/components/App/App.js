@@ -4,38 +4,37 @@ import { Switch, Route } from 'react-router'
 import { Link } from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom'
 
-import AppButtonInputList from 'components/AppButtonInputList'
+import * as Components from './ComponentsList'
 
-import AppLayout from 'components/AppLayout'
-import AppHello from 'components/AppHello'
+let components = []
+Object.keys(Components).forEach(val => {
+  if (Components[val])
+    components.push({
+      name: val,
+      comp: Components[val],
+      path: '/' + val
+    })
+})
 
-const components = [
-  {
-    name: 'Hello',
-    component: AppHello,
-    path: '/hello'
-  },
-  {
-    name: 'Layout',
-    component: AppLayout,
-    path: '/layout'
-  },
-  {
-    name: 'Button Input List',
-    component: AppButtonInputList,
-    path: '/buttoninputlist'
-  }
-]
+const ComponentsListHeader = () => (
+  <div className="component-list-header">Components List</div>
+)
 
 const ComponentsList = () => (
-  <ul>
-    Components List
-    {components.map(comp => (
-      <li key={comp.name}>
-        <Link to={comp.path}>{comp.name}</Link>
-      </li>
-    ))}
-  </ul>
+  <div className="components-list">
+    <ComponentsListHeader />
+    <ul>
+      {components.map(comp => (
+        <li key={comp.name}>
+          {/* Path is the same as component name + / */}
+          <Link to={comp.path}>{comp.name}</Link>
+        </li>
+      ))}
+    </ul>
+    <div className="notice">
+      run <b>npm run tree</b> to update component list
+    </div>
+  </div>
 )
 
 export default class App extends React.PureComponent {
@@ -43,16 +42,26 @@ export default class App extends React.PureComponent {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={ComponentsList} />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <div className="route-container">
+                <ComponentsList />
+              </div>
+            )}
+            />
           {components.map(comp => (
             <Route
-              key={comp.name}
+              key={comp.path}
               exact
               path={comp.path}
-              /**
-               * NOTICE HERE, PASSING THROUGH PROPS FROM STATE TO EACH COMPONENT
-               */
-              render={() => React.createElement(comp.component, this.props)}
+              // component={comp.comp}
+              render={() => (
+                <div className="route-container">
+                  {React.createElement(comp.comp, this.props)}
+                </div>
+              )}
               />
           ))}
         </Switch>
