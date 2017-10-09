@@ -7,6 +7,7 @@ import Hello from 'components/Hello';
 import Input from 'components/Input';
 import Layout from 'components/Layout';
 import List from 'components/List';
+import ListItem from 'components/ListItem';
 import RegionContent from 'components/RegionContent';
 import RegionSidebar from 'components/RegionSidebar';
-export { AppButtonInputList, AppHello, AppLayout, Button, ColumnLayout, Hello, Input, Layout, List, RegionContent, RegionSidebar };
+export { AppButtonInputList, AppHello, AppLayout, Button, ColumnLayout, Hello, Input, Layout, List, ListItem, RegionContent, RegionSidebar };

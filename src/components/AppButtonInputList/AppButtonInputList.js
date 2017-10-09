@@ -1,20 +1,22 @@
 import React from 'react'
 import Button from 'components/Button'
 import List from 'components/List'
+import ListItem from 'components/ListItem'
 import Input from 'components/Input'
 
 const AppButtonInputList = () => (
   <div>
     <Button
-      text="Click here"
       onClick={() => {
         alert('clicked!')
       }}
-      />
+      >
+      Some text here
+    </Button>
     <Input value="default value" />
     <List>
-      <div>Child 1</div>
-      <div>Child 2</div>
+      <ListItem>item 1</ListItem>
+      <ListItem>item 2</ListItem>
     </List>
   </div>
 )
