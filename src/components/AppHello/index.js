@@ -1,1 +1,1 @@
-export { default } from './AppHello'
+export { default } from './AppHello';

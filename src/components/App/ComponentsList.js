@@ -1,13 +1,30 @@
-import AppButtonInputList from 'components/AppButtonInputList';
-import AppHello from 'components/AppHello';
-import AppLayout from 'components/AppLayout';
-import Button from 'components/Button';
-import ColumnLayout from 'components/ColumnLayout';
-import Hello from 'components/Hello';
-import Input from 'components/Input';
-import Layout from 'components/Layout';
-import List from 'components/List';
-import ListItem from 'components/ListItem';
-import RegionContent from 'components/RegionContent';
-import RegionSidebar from 'components/RegionSidebar';
-export { AppButtonInputList, AppHello, AppLayout, Button, ColumnLayout, Hello, Input, Layout, List, ListItem, RegionContent, RegionSidebar };
+import React from "react";
+import { Link } from "react-router-dom";
+import AppHello from "components/AppHello";
+import Hello from "components/Hello";
+
+const ComponentsList = () => (
+  <ul div="components-list">
+    <li>
+      <Link to={"/AppHello"}>AppHello</Link>
+    </li>
+    <li>
+      <Link to={"/Hello"}>Hello</Link>
+    </li>
+  </ul>
+);
+
+ComponentsList.components = [
+  {
+    name: "AppHello",
+    path: "/AppHello",
+    component: AppHello
+  },
+  {
+    name: "Hello",
+    path: "/Hello",
+    component: Hello
+  }
+];
+
+export default ComponentsList;
