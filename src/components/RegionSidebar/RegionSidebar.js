@@ -1,14 +1,35 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import './RegionSidebar.scss'
+import React from "react";
+import PropTypes from "prop-types";
+import "./RegionSidebar.scss";
 
-const closedClass = 'sidebar--closed'
-const openClass = 'sidebar--open'
+const closedClass = "sidebar--closed";
+const openClass = "sidebar--open";
+
+const propTypes = {
+  isOpen: PropTypes.bool,
+  fixed: PropTypes.bool,
+  children: PropTypes.node
+};
+const defaultProps = {
+  isOpen: false
+};
 
 class RegionSidebar extends React.PureComponent {
   state = {
-    isOpen: this.props.isOpen || false
+    isOpen: this.props.isOpen
+  };
+
+  static defaultProps = defaultProps;
+  static propTypes = propTypes;
+
+  static getOpenClass() {
+    return openClass;
   }
+
+  static getClosedClass() {
+    return closedClass;
+  }
+
   render() {
     return (
       <div className="region-sidebar">
@@ -17,7 +38,7 @@ class RegionSidebar extends React.PureComponent {
         </div>
         <div
           className={
-            this.state.isOpen ? 'spacer click-to-close' : 'spacer click-to-open'
+            this.state.isOpen ? "spacer click-to-close" : "spacer click-to-open"
           }
           onClick={() =>
             this.setState({
@@ -25,14 +46,8 @@ class RegionSidebar extends React.PureComponent {
             })}
           />
       </div>
-    )
+    );
   }
 }
 
-RegionSidebar.propTypes = {
-  isOpen: PropTypes.bool,
-  children: PropTypes.node
-}
-
-export default RegionSidebar
-export { closedClass, openClass }
+export default RegionSidebar;

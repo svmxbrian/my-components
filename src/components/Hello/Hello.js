@@ -1,26 +1,26 @@
 // @flow
-import React from 'react';
-import PropTypes from 'prop-types';
-import './Hello.scss';
+import React from "react";
+import PropTypes from "prop-types";
+import "./Hello.scss";
 
 export default class Hello extends React.PureComponent {
   static propTypes = {
-    onSubmit: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired
   };
 
   state = {
-    name: '',
-  }
+    name: ""
+  };
 
   onChangeName = (event: Object) => {
     this.setState({ name: event.target.value });
-  }
+  };
 
   onSubmitForm = (event: Object) => {
     event.preventDefault();
     this.props.onSubmit({ name: this.state.name });
-    this.setState({ name: '' });
-  }
+    this.setState({ name: "" });
+  };
 
   render() {
     return (

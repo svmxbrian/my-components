@@ -1,13 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import './RegionContent.scss'
+import React from "react";
+import PropTypes from "prop-types";
+import "./RegionContent.scss";
+
+const propTypes = {
+  children: PropTypes.node
+};
 
 const RegionContent = props => (
   <div className="region-content">{props.children}</div>
-)
+);
 
-RegionContent.propTypes = {
-  children: PropTypes.node
-}
+RegionContent.propTypes = propTypes;
 
-export default RegionContent
+export default RegionContent;
